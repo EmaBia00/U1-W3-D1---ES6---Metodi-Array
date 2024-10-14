@@ -46,8 +46,9 @@ console.log("ESERCIZIO 04");
 
 let totalSum = 0;
 findEvenNum.forEach(function (num) {
-  console.log((totalSum += num));
+  totalSum += num;
 });
+console.log(totalSum);
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -216,27 +217,62 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+console.log("ESERCIZIO 09");
+
+let oldestMovie = movies[0].Year;
+
+movies.forEach(function (movieYears) {
+  if (movieYears.Year < oldestMovie) {
+    oldestMovie = movieYears.Year;
+  }
+});
+console.log("Il film più vecchio è datato anno:", oldestMovie);
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
+console.log("ESERCIZIO 10");
+
+console.log("Il numero totale di film è:", movies.length);
 
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
+console.log("ESERCIZIO 11");
+
+const onlyTitle = movies.map((title) => title.Title);
+console.log(onlyTitle);
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
+console.log("ESERCIZIO 12");
+
+const thisMillennial = movies.filter((Years) => Years.Year > 2000);
+console.log(thisMillennial);
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+console.log("ESERCIZIO 13");
+
+const yearsTotal = movies.reduce((accumulator, amount) => {
+  return (accumulator += amount.Year);
+}, 0);
+console.log(yearsTotal);
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
+console.log("ESERCIZIO 14");
+
+const thisMovie = movies.find((imdbID) => imdbID.imdbID === "tt4154756");
+console.log(thisMovie);
 
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+console.log("ESERCIZIO 15");
+
+const thisMovieYear = movies.findIndex((Years) => Years.Year === "2019");
+console.log(thisMovieYear);
