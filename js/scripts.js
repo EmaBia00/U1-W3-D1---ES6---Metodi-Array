@@ -257,7 +257,7 @@ console.log(thisMillennial);
 console.log("ESERCIZIO 13");
 
 const yearsTotal = movies.reduce((accumulator, amount) => {
-  return (accumulator += amount.Year);
+  return (accumulator += parseInt(amount.Year));
 }, 0);
 console.log(yearsTotal);
 
